@@ -1,8 +1,16 @@
-import { Router } from "./router/Router";
+import React from "react";
 import "./styles.css";
+import { RecoilRoot } from "recoil";
+
+import { Router } from "./router/Router";
+import { UserProvider } from "./providers/UserProvider";
 
 export default function App() {
   return (
-    <Router />
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>  
   );
 }
